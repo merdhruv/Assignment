@@ -23,11 +23,11 @@ public:
     ~Complex(){
         cout << "Destructor is called" << endl;
     }
-    void display(){
+    void display(){                         //displays the Complex Number.
         cout << real << " + i" << img << endl;
     }
 
-    Complex operator- (Complex &c1){ //subtracts two complex numbers 
+    Complex operator- (Complex &c1){ //subtracts two complex numbers.
         Complex c3;
         c3.real  = real - c1.real;
         c3.img = img - c1.img;
