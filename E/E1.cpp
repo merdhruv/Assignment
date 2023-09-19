@@ -35,8 +35,8 @@ public:
     }
     Complex operator*(Complex &c1){//multiplies two complex numbers.
         Complex c3;
-        c3.real  = real * c1.real;
-        c3.img = img * c1.img;
+        c3.real  = (real * c1.real) - (img * c1.img);
+        c3.img = (real * c1.img) + (img * c1.real);
         return c3;
     }
     void operator--(){ // pre decrement
@@ -57,7 +57,7 @@ public:
 //-------Application-------
 
 int main(){
-    Complex c1(10,20);
+    Complex c1(7,8);
     Complex c2(5,6);
 
     Complex c3 = c1 - c2;
