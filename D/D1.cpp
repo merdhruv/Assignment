@@ -34,7 +34,7 @@ public:
         }
         cout << endl;
     }
-    void pop(){
+    void pop(){                                                //Changes to be made.
         size -= 1;                                              //decrease the current size of the stack.
     }
     void isFull(){
