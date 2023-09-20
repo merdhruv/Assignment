@@ -34,8 +34,12 @@ public:
         }
         cout << endl;
     }
-    void pop(){                                                //Changes to be made.
-        size -= 1;                                              //decrease the current size of the stack.
+    void pop(){       
+        cout << "Element to be removed : "<< arr[0] << endl;
+        size -= 1;                                                //decrease the current size of the stack.
+        for(int i = 0; i < this->size; i++){
+            this->arr[i] = this->arr[i+1];
+        }
     }
     void isFull(){
         if(size == totalsize) cout << "The stack is full"<< endl; // if totalsize == current size of the stack then return true.

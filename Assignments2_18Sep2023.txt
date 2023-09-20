@@ -1,0 +1,150 @@
+
+
+Course Contents URI: https://www.cdac.in/index.aspx?id=DAC&courseid=0
+
+Assignment evaluation 20 marks:
+1. Logic ( 5 marks )
+2. Output ( 5 marks )
+3. Indentation (3 marks)
+4. Comments (3 marks)
+5. Error-handling  (4 marks)
+
+Topic-wise Assignment :
+------------------------------------------- 
+A. Loops :
+ A1. Write a program in C++ to find the first 10 natural numbers.
+Sample output:
+The natural numbers are:
+1 2 3 4 5 6 7 8 9 10
+
+ A2. Write a program in C++ to display n terms of natural numbers and their sum.
+Sample Output:
+Input a number of terms: 7
+The natural numbers upto 7th terms are:
+1 2 3 4 5 6 7
+The sum of the natural numbers is: 28
+
+ A3. Write a program in C++ to calculate the series (1) + (1+2) + (1+2+3) + (1+2+3+4) + ... + (1+2+3+4+...+n).
+Sample Output:
+Input the value for nth term: 5
+1 = 1
+1+2 = 3
+1+2+3 = 6
+1+2+3+4 = 10
+1+2+3+4+5 = 15
+The sum of the above series is: 35
+
+ A4. Write a C++ program that displays the pattern like a pyramid using asterisks, with odd numbers in each row.
+Sample Output:
+ 
+                                                     
+ Input number of rows: 5                                               
+                                                                       
+    *                                                                  
+   ***                                                                 
+  *****                                                                
+ ******* 
+  *****
+   ***
+    *
+
+ ******* 
+ *** ***
+ **   **
+ *     *
+ **   **
+ *** ***
+ *******
+
+ A5. Write a C++ program with following options:
+	a. Find a number is Shakuntala Devi's number or not. Ex: 145
+	b. Find range of Shakuntala Devi's numbers. Ex: between 1 to 1000 is : 1, 2, 145 
+-------------------------------------------
+B. Strings :
+
+B1. Write a C++ program to change every letter in a given string with the letter following it in the alphabet (i.e. a becomes b, p becomes q, z becomes a).
+Example:
+Sample Input: w3resource
+Sample Output: x3sftpvsdf
+
+B2. Write a C++ program to check if a given string is a Palindrome or not.
+A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam, racecar.
+Example:
+Sample Input: madam
+Sample Output: True
+
+
+-------------------------------------------
+C. Basic C++ Object-Oriented Programming :
+ C1. Write a C++ program to create a class called Person that has private member variables for name, age and country. Implement member functions to set and get the values of these variables.
+
+ C2. Write a C++ program to implement a class called BankAccount that has private member variables for account number and balance. Include member functions to deposit and withdraw money from the account.
+
+
+
+
+
+
+
+-------------------------------------------
+D. Data-structures using C++:
+ D1. Write a C++ program to implement a stack using an array with push and pop operations. Check if the stack is full.
+Test Data:
+MAX_SIZE of the array: 5
+Insert some elements onto the stack:
+Stack elements: 1 2 5 6 9
+Is the stack full? 1
+Remove an element from the stack! 1
+Stack elements: 2 5 6 9
+Is the stack full? 0
+
+ D2.  Write a C++ program to find the mean, variance and standard deviation of all elements of a queue.
+
+ D3. Implement linked list working like Queue.
+ D4. Implement linked list working like Stack.
+ D5. Add two hugh positive numbers using  linked list.
+ D6. Add two hugh positive numbers using  linked list.
+
+-------------------------------------------
+E. Operator-Overloading :
+ E1. Support following operators to be overloaded for Complex numbers :
+	a. Subtraction.
+	b. Multiplication.
+	c. pre and post decrement.
+	d. Display Complex number. Hint: cout << obj.  
+
+
+
+
+-------------------------------------------
+
+F: Inheritance
+
+ F1. how to read and print students information using two classes and simple inheritance using C++ program?
+  Solution: https://www.includehelp.com/cpp-programs/cpp-inheritance-programs-to-read-and-print-student-information-using-two-classes-and-simple-inheritance.aspx
+
+
+
+ F2. C++ program to demonstrate example of hierarchical inheritance to get square and cube of a number
+  Solution : https://www.includehelp.com/cpp-programs/cpp-inheritance-program-to-demonstrate-example-of-hierarchical-square-and-cube-of-a-number-inheritance.aspx?ref=rp
+
+
+ F3. C++ program to read and print employee information with department and pf information using hierarchical inheritance
+  Solution : https://www.includehelp.com/cpp-programs/cpp-inheritance-program-to-read-and-print-employee-information-with-department-and-pf-using-hierarchical-inheritance.aspx?ref=rp
+ 
+-------------------------------------------
+
+G: 
+
+
+
+-------------------------------------------
+
+More Practice Exercises / Assignments:
+ Pick any 3 examples on each topic from the below URL's and practice.
+
+1. https://www.w3resource.com/cpp-exercises/basic/index.php
+2. https://learn.saylor.org/mod/book/view.php?id=33554
+3. https://techstudy.org/cpluspluslanguage/cpp-programming-example-and-solutions
+4. https://exercism.org/tracks/cpp/exercises
+
