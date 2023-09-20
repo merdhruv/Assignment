@@ -9,13 +9,13 @@ using namespace std;
 //-------------------------------------------------------
 
 //-------Library-------
-int fact(int n) {
+int fact(int n) {               //function to calculate factorial.
   if(n > 1)
     return n * fact(n - 1);
   else
     return 1;
 }
-void deviNumber(int &n){
+void deviNumber(int &n){               //A number whose sum of factorial of each digit is equal to that number is Shakuntala Devi's number
     if(1 == n || 2 == n) cout << "The number entered is Shakuntala Devi's number.";
     else{
         int num = n;    //a copy of input is created to modify the input.

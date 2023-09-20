@@ -11,13 +11,13 @@ using namespace std;
 //-------------------------------------------------------
 
 //-------Library-------
-int fact(int n) {
+int fact(int n) {               //function to calculate factorial.
   if(n > 1)
     return n * fact(n - 1);
   else
     return 1;
 }
-bool deviNumber(int &n){
+bool deviNumber(int &n){                 //A number whose sum of factorial of each digit is equal to that number is Shakuntala Devi's number
     if(1 == n || 2 == n) return true;
     else{
         int num = n;
