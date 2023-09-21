@@ -15,8 +15,8 @@ public:
     int getVal(){
         return this->val;
     }
-
 };
+
 class QueueLL{
     Node *front, *rear;
 public:
@@ -25,8 +25,13 @@ public:
         rear = nullptr;
     }
     void enQueue(int val){
-        Node *temp = new Node(val); //create a new Node.
-
+        Node*temp;
+        try{                       //try catch bad allocation error.
+            temp = new Node(val); //create a new Node.
+        }
+        catch (bad_alloc err) {
+		cout << "Low memory" << endl;
+	}
         if(rear == nullptr){        //if queue is empty 
             front = temp;           //new node is both front and rear.
             rear = temp; 
@@ -45,11 +50,11 @@ public:
     }
     void display(){
         cout << "The current queue is: "<<endl;
-        if(front == rear){
+        if(front == rear){                      //if only one element.
             cout << front->getVal() << endl;
         }
         else{
-            Node* temp = front;
+            Node* temp = front;                 //if multiple elements.
             while(temp!=nullptr){
                 cout << temp->getVal() << " ";
                 temp = temp->next;
@@ -67,8 +72,11 @@ int main(){
     head.enQueue(10);
     head.enQueue(20);
     head.enQueue(30);
+
     head.display();
-    head.deQueue();
+
+    head.deQueue(); //removing front element from queue.
+    
     head.display();
     
     
