@@ -13,7 +13,7 @@ public:
     Node *next;
     Node(int x = 0, Node *next =nullptr) : val(x), next(next) {}
     int getVal(){
-        return this->val;
+        return this->val;           //getting the value.
     }
 };
 
