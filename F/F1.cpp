@@ -4,7 +4,6 @@
 //-------------------------------------------------------
 //header files included
 #include <iostream>
-#include <string>
 using namespace std;
 //-------------------------------------------------------
 
@@ -40,7 +39,7 @@ public:
     }
     void getResult(){
         cout << "----------------------------------------------------------------"<< endl;
-        cout << "Total Marks : " << marks << ", Percentage : " << percentage << endl;
+        cout << "Total Marks : " << marks << ", Percentage : " << percentage  << "%"<< endl;
     }
 };
 
