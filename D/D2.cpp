@@ -3,97 +3,125 @@
 //-------------------------------------------------------
 //header files included
 #include <iostream>
-#include <math.h>
+#include <map>
+#include <cmath>
 using namespace std;
+const int MAX_SIZE = 100;
 //-------------------------------------------------------
 
 //-------Library-------
-class queue{
-    int *arr;
-    int front;
-    int rear;
-    int size;
-    int count;
-
-public:
-    queue(int num) {
-        arr[num];
-        size = num;
-        front = 0;
+class Queue {
+  int front;
+  int rear;
+  int arr[MAX_SIZE];
+public: 
+    Queue() {
+        front = -1;
         rear = -1;
-        count = 0;
     }
-    ~queue(){
-        delete [] arr;
+    bool isFull() {
+        return (rear == MAX_SIZE - 1);
+    }
+    bool isEmpty() {
+        return (front == -1 && rear == -1);
+    }
+    void enqueue(int x) {
+        if (isFull()) {
+            cout << "Error: Queue is full" << endl;
+            return;
+        }
+        if (isEmpty()) {
+            front = 0;
+            rear = 0;
+        } else {
+            rear++;
+        }
+        arr[rear] = x;
+    }
+    void dequeue() {
+        if (isEmpty()) {
+            cout << "Error: Queue is empty" << endl;
+            return;
+        }
+        if (front == rear) {
+            front = -1;
+            rear = -1;
+        } else {
+            front++;
+        }
+    }
+    int peek() {
+        if (isEmpty()) {
+            cout << "Error: Queue is empty" << endl;
+            return -1;
+        }
+        return arr[front];
+    }
+    void display() {
+        if (isEmpty()) {
+            cout << "Error: Queue is empty" << endl;
+            return;
+        }
+        cout << "Queue elements are: ";
+        for (int i = front; i <= rear; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
     }
 
-    bool isEmpty(){
-        return (count == 0);
-    }
-    bool isFull(){
-        return (size == count);
-    }
-    int dequeue(){
-        if(isEmpty()){
-            cout << "no elements to dequeue \n";
+    float getMean() {
+        if (isEmpty()) {
+            cout << "Error: Queue is empty" << endl;
+        return 0;
         }
-        int x = arr[front];
-        front = (front+1) ;
-        count--;
-
-        return x;
-    }
-    void enqueue(int i){
-        if(isFull()){
-            cout << "The queue is Full \n";
-        }
-        rear = (rear+1);
-        arr[rear] = i;
-        count ++;
-    }
-    int average(){
-        int sum = 0;
-        for(int i = 0; i <= count; i++){
+        float sum = 0;
+        for (int i = front; i <= rear; i++) {
             sum += arr[i];
         }
-        cout << "The Average of the queue elements : " << sum/count << endl;
-        return sum/count;
+        return sum / (rear - front + 1);
     }
-    int variance(){
-        int sum = 0;
-        for(int i = 0; i < count; i++){
-            sum += (arr[i] - this->average())*(arr[i] - this->average());
+
+    float getVariance() {
+        if (isEmpty()) {
+            cout << "Error: Queue is empty" << endl;
+            return 0;
         }
-        cout << "The variance is : "<< sum/count;
-        return sum/count;
-    }
-    int stdDeviation(){
-        return sqrt(this->variance());
-    }
-    void display(){
-        if(isEmpty()){
-            cout << "No elements to show";
-        }
-        else{
-            cout << "The current queue is : " << endl;
-            for(int i = 0; i < count; i++){
-                cout<< arr[i] <<" ";
+        float mean = getMean();
+        float variance = 0;
+            for (int i = front; i <= rear; i++) {
+                variance += pow(arr[i] - mean, 2);
             }
-            cout << endl;
+            return variance / (rear - front + 1);
+        }   
+
+        float getStdDev() {
+            return sqrt(getVariance());
         }
-    }
-};
+    };
+
+//-------Application------
 
 
 
-//-------Application-------
-
-int main(){
-    queue q1(3);
-    q1.enqueue(3);
-    q1.enqueue(4);
-    q1.enqueue(5);
-
-    q1.average();
-
+int main() {
+  cout << "Initialize a Queue." << endl;
+  Queue q;
+  cout << "\nInsert some elements into the queue:" << endl;
+  q.enqueue(1);
+  q.enqueue(2);
+  q.enqueue(3);
+  q.enqueue(4);
+  q.enqueue(5);
+  q.display();
+  cout << "Mean: " << q.getMean() << endl;
+  cout << "Variance: " << q.getVariance() << endl;
+  cout << "Standard Deviation: " << q.getStdDev() << endl;
+  cout << "\nRemove two elements from the said queue: " << q.getStdDev() << endl;
+  q.dequeue();
+  q.dequeue();
+  q.display();
+  cout << "Mean: " << q.getMean() << endl;
+  cout << "Variance: " << q.getVariance() << endl;
+  cout << "Standard Deviation: " << q.getStdDev() << endl;
+  return 0;
 }
