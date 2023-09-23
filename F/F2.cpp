@@ -4,7 +4,6 @@
 //-------------------------------------------------------
 //header files included
 #include <iostream>
-#include <string>
 using namespace std;
 //-------------------------------------------------------
 
