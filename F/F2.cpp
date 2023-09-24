@@ -28,7 +28,7 @@ public:
         return n*n;
     }
 };
-//Derived Cube class from Number class publicly
+//Derived Cube class from Number class publicly.
 class Cube : public Number{
 public:
     int getCube(){
