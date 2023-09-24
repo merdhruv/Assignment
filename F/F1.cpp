@@ -13,6 +13,7 @@ class Student{
     int age;
     char gender;
 public:
+    // setting the basic info of Student.
     void setStudent(){
         cout << "Enter Student Name : " ;
         cin >> name;
@@ -21,22 +22,25 @@ public:
         cout << "Gender : ";
         cin >> gender;
     }
+    // to display the info of Student.
     void getStudent(){
         cout << "----------------------------------------------------------------"<< endl;
         cout << "Name : "<< name << ", Age : " << age << ", Gender : " << gender << endl;  
     }
 
 };
-
+//Derived studentResult from Student Publicly.
 class studentResult : public Student{
     int marks;
     int percentage;
 public:
+    //to set result data.
     void setResult(){
         cout << "Enter total marks out of 500 : ";
         cin >> marks;
         percentage = (marks*100)/500;
     }
+    //to get result data.
     void getResult(){
         cout << "----------------------------------------------------------------"<< endl;
         cout << "Total Marks : " << marks << ", Percentage : " << percentage  << "%"<< endl;

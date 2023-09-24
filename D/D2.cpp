@@ -25,6 +25,7 @@ public:
     bool isEmpty() {
         return (front == -1 && rear == -1);
     }
+    // function to enqueue elements.
     void enqueue(int x) {
         if (isFull()) {
             cout << "Error: Queue is full" << endl;
@@ -38,6 +39,7 @@ public:
         }
         arr[rear] = x;
     }
+    //function to dequeue elements.
     void dequeue() {
         if (isEmpty()) {
             cout << "Error: Queue is empty" << endl;
@@ -50,13 +52,7 @@ public:
             front++;
         }
     }
-    int peek() {
-        if (isEmpty()) {
-            cout << "Error: Queue is empty" << endl;
-            return -1;
-        }
-        return arr[front];
-    }
+    //function to display elements of queue.
     void display() {
         if (isEmpty()) {
             cout << "Error: Queue is empty" << endl;
@@ -68,7 +64,7 @@ public:
         }
         cout << endl;
     }
-
+    //function to get Mean of elements.
     float getMean() {
         if (isEmpty()) {
             cout << "Error: Queue is empty" << endl;
@@ -80,7 +76,7 @@ public:
         }
         return sum / (rear - front + 1);
     }
-
+    // function to get variance of elements.
     float getVariance() {
         if (isEmpty()) {
             cout << "Error: Queue is empty" << endl;
@@ -93,11 +89,11 @@ public:
             }
             return variance / (rear - front + 1);
         }   
-
-        float getStdDev() {
-            return sqrt(getVariance());
-        }
-    };
+    //function to get Standard Devaition.
+    float getStdDev() {
+        return sqrt(getVariance());
+    }
+};
 
 //-------Application------
 

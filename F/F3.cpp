@@ -15,6 +15,7 @@ class Employee {
     string name;
     char gender;
 public:
+//to set Employee info
     void setInfo(){
         cout << "Enter Employee ID : ";
         cin >> empId;
@@ -23,13 +24,14 @@ public:
         cout << "Gender : ";
         cin >> gender;
     }
+    //to get Employee info.
     void getInfo(){
         cout<<"--------------------------------------------------"<<endl;
         cout << "ID : " << empId << ", Name : " << name << ", Gender : "<< gender << endl;
         
     }
 };
-
+// Derived Department class form Employee class publicly
 class Department : public Employee{
     string deptName;
     int deptCapacity;
@@ -49,7 +51,7 @@ public:
     }
 
 };
-
+//Derived Loan class from Employee class privately.
 class Loan : private Employee{
     string loanDetails;
     int loanAmount;

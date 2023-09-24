@@ -20,7 +20,7 @@ public:
         return num;
     }
 };
-
+//Derived Square class from Number class publicly.
 class Square : public Number{
 public:
     int getSquare(){
@@ -28,7 +28,7 @@ public:
         return n*n;
     }
 };
-
+//Derived Cube class from Number class publicly
 class Cube : public Number{
 public:
     int getCube(){
