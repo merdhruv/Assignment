@@ -57,13 +57,17 @@ public:
 int main(){
     Complex c1(7,8);
     Complex c2(5,6);
-
+    
+    cout << "c1 = ";
+    c1.display();
+    cout << "c2 = ";
+    c2.display();
     Complex c3 = c1 - c2;
     cout << "c1 - c2 = " ;
     c3.display();
     cout << "c1-- = ";
     c1--;
-    cout << " --c2 = ";
+    cout << "--c2 = ";
     --c2;
     cout << "c1 * c2 = ";
     Complex c4 = c1 * c2;
