@@ -59,6 +59,7 @@ public:
                 cout << temp->getVal() << " ";
                 temp = temp->next;
             }
+            cout << endl;
         }
         
     }
