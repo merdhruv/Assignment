@@ -18,6 +18,9 @@ int fact(int n) {               //function to calculate factorial.
     return 1;
 }
 bool deviNumber(int &n){                 //A number whose sum of factorial of each digit is equal to that number is Shakuntala Devi's number
+    if(n < 0){
+        throw(n);
+    }
     if(1 == n || 2 == n) return true;
     else{
         int num = n;
@@ -29,6 +32,7 @@ bool deviNumber(int &n){                 //A number whose sum of factorial of ea
         }
         return (sum == n);
     }   
+
 }
 
 
@@ -37,7 +41,15 @@ bool deviNumber(int &n){                 //A number whose sum of factorial of ea
 int main(){
     int n;
     cout << "Enter a Number : ";
-    cin >> n; 
+    try{
+        if(!(cin >> n) ||  n <=0){
+            throw invalid_argument("error");
+        }
+    }
+    catch(invalid_argument &e){
+        cout <<  e.what();
+        exit(EXIT_FAILURE);
+    }
     cout << endl;
     vector<int>ans;
     for(int i = 1; i <= n ; i++){

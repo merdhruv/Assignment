@@ -12,9 +12,18 @@ class ArrStack{                             //two sizes are declared.
     int size = 0;                           //another is current size of the stack.
     int arr[];
 public:
-    void setSize(int &x){               
-        size = x;           
-        totalsize = x;
+    void setSize(int &x){ 
+        try{              
+            size = x;           
+            totalsize = x;
+            if(x<0){
+                throw(x);
+            }
+        }
+        catch(int x){
+            cout << "size should be greater than zero.";
+            exit(EXIT_FAILURE);
+        }
     }
     void getSize(){
         if(size == 0){cout << "size is 0" << endl;}             //if no elements then size  = 0. 

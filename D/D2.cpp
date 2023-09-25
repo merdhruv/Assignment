@@ -112,7 +112,7 @@ int main() {
   cout << "Mean: " << q.getMean() << endl;
   cout << "Variance: " << q.getVariance() << endl;
   cout << "Standard Deviation: " << q.getStdDev() << endl;
-  cout << "\nRemove two elements from the said queue: " << q.getStdDev() << endl;
+  cout << "\nRemove two elements from the said queue: " << endl;
   q.dequeue();
   q.dequeue();
   q.display();

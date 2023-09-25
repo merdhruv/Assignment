@@ -9,53 +9,63 @@ using namespace std;
 
 void pattern(int &n){ 
 
-    // Diamond Pattern.
-    
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n-i; j++){
-            cout << " ";
-        }
-        for(int j = 0; j < (2*i)-1; j++){
-            cout << "*";
-        }
-        cout << endl;
-    }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < i; j++){
-            cout << " ";
-        }
-        for(int j = 0; j <2*(n-i)-1; j++){
-            cout << "*";
-        }
-        cout << endl;
-    }
 
-    //Hallow DIamond Pattern. 
-    cout << endl;
-    for(int i = 1; i <= n; i++){
-        for(int j = i; j <= n; j++){
-            cout << "*";
+    try{
+        if(n < 0){
+            throw(n);
         }
-        for(int j = 1; j <= (2*i-2); j++){
-            cout << " ";
+        // Diamond Pattern.
+        
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n-i; j++){
+                cout << " ";
+            }
+            for(int j = 0; j < (2*i)-1; j++){
+                cout << "*";
+            }
+            cout << endl;
         }
-        for(int j = i; j <= n; j++){
-            cout << "*";
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < i; j++){
+                cout << " ";
+            }
+            for(int j = 0; j <2*(n-i)-1; j++){
+                cout << "*";
+            }
+            cout << endl;
         }
+
+        //Hallow DIamond Pattern. 
         cout << endl;
+        for(int i = 1; i <= n; i++){
+            for(int j = i; j <= n; j++){
+                cout << "*";
+            }
+            for(int j = 1; j <= (2*i-2); j++){
+                cout << " ";
+            }
+            for(int j = i; j <= n; j++){
+                cout << "*";
+            }
+            cout << endl;
+        }
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= i; j++){
+                cout<<"*";
+            }
+            for(int j=(2*i-2); j<(2*n-2); j++){
+                cout<<" ";
+            }
+            for(int j = 1; j <= i; j++){
+                cout<<"*";
+            }
+            cout << endl;
+            }
     }
-    for(int i = 1; i <= n; i++){
-        for(int j = 1; j <= i; j++){
-            cout<<"*";
-        }
-        for(int j=(2*i-2); j<(2*n-2); j++){
-            cout<<" ";
-        }
-        for(int j = 1; j <= i; j++){
-            cout<<"*";
-        }
-        cout << endl;
-        }
+    catch(int n){
+        cout << "The input must be positive";
+        exit(EXIT_FAILURE);
+    }
     
 }
 

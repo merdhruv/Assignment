@@ -17,8 +17,17 @@ public:
     void setStudent(){
         cout << "Enter Student Name : " ;
         cin >> name;
-        cout << "Enter age : ";
-        cin >> age;
+        try{
+            cout << "Enter age : ";
+            cin >> age;
+            if(age<0 || age>100){
+                throw(age);
+            }
+        }
+        catch(int age){
+            cout << "Age must be greater than zero and less than 100";
+            exit(EXIT_FAILURE);
+        }
         cout << "Gender : ";
         cin >> gender;
     }
@@ -36,8 +45,17 @@ class studentResult : public Student{
 public:
     //to set result data.
     void setResult(){
-        cout << "Enter total marks out of 500 : ";
-        cin >> marks;
+        try{
+            cout << "Enter total marks out of 500 : ";
+            cin >> marks;
+            if(marks>500 || marks <0){
+                throw(marks);
+            }
+        }
+        catch(int marks){
+            cout << "marks should be greater than 0 and less than 500";
+            exit(EXIT_FAILURE);
+        }
         percentage = (marks*100)/500;
     }
     //to get result data.
@@ -51,7 +69,7 @@ public:
 
 //-------Application-------
 
-int main(){
+int main(){ 
 
     studentResult s1;
 

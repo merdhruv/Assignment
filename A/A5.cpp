@@ -16,6 +16,10 @@ int fact(int n) {               //function to calculate factorial.
     return 1;
 }
 void deviNumber(int &n){               //A number whose sum of factorial of each digit is equal to that number is Shakuntala Devi's number
+try{
+    if(n < 0){
+        throw(n);
+    }
     if(1 == n || 2 == n) cout << "The number entered is Shakuntala Devi's number.";
     else{
         int num = n;    //a copy of input is created to modify the input.
@@ -27,7 +31,12 @@ void deviNumber(int &n){               //A number whose sum of factorial of each
         }
         if(sum == n) cout << "The number entered is Shakuntala Devi's number.";
         else cout << "The number entered is not Shakuntala Devi's number.";
-    }   
+    } 
+}
+catch(int n){
+    cout << "the input must be positive";
+    exit(EXIT_FAILURE);
+}  
 }
 
 

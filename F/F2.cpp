@@ -13,8 +13,17 @@ class Number{
     int num;
 public:
     void setNumber(){
-        cout << "Enter a number : ";
-        cin >> num;
+        try{
+            cout << "Enter a number : ";
+            cin >> num;
+            if(num < 0){
+                throw(num);
+            }
+        }
+        catch(int num){
+            cout << "Number must be Positive";
+            exit(EXIT_FAILURE);
+        }
     }
     int getNumber(){
         return num;

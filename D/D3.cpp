@@ -11,7 +11,18 @@ class Node{
     int val;
 public:
     Node *next;
-    Node(int x = 0, Node *next =nullptr) : val(x), next(next) {}
+    Node(int x = 0, Node *next =nullptr) : next(next) {
+        try{
+            val = x;
+            if(x < 0){
+                throw(x);
+            }
+        }
+        catch(int x){
+            cout << "the value of the node must be positive";
+            exit(EXIT_FAILURE);
+        }
+    }
     int getVal(){
         return this->val;
     }

@@ -13,15 +13,35 @@ class BankAccount{
     int balance = 0;
 public:
     void deposit(int n){
-        this->balance += n;
+        try{
+            this->balance += n;
+            if(n < 0){
+                throw(n);
+            }
+        }
+        catch(int n){
+            cout << "the value must be positive";
+            exit(EXIT_FAILURE);
+        }
     }
-    void withdraw(int n){                                                   //if the amount to be withdrawn is greater then balance then invalid.
-        if(n > balance){
-            cout << "Sorry, you don't have enough balance" << endl;
-            cout << "-----------------------------------------------"<<endl;
-        }else{                                                              //else withdraw the amount.
-            this->balance -= n;
-        }  
+    void withdraw(int n){  
+        try{     
+            if(n < 0){      //exception thrown.
+                throw(n);
+            }                                            
+            //if the amount to be withdrawn is greater then balance then invalid.
+            if(n > balance){
+                cout << "Sorry, you don't have enough balance" << endl;
+                cout << "-----------------------------------------------"<<endl;
+            }
+            else{          //else withdraw the amount.
+                this->balance -= n;
+            } 
+        } 
+        catch(int n){
+            cout << "the amount must be positive";
+            exit(EXIT_FAILURE);
+        }
     }
     void checkBalance(){
         cout << "your current balance is: "<< this->balance << endl; 

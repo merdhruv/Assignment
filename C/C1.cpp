@@ -24,7 +24,16 @@ public:
         }
     }
     void setAge(int n){
-        this->age = n;
+        try{
+            this->age = n;
+            if(n <=0 || n >= 100){
+                throw(n);
+            }
+        }     
+        catch(int n){
+            cout << "the age must be between 0 to 100";
+            exit(EXIT_FAILURE);
+        }
     }
     void getAge(){
         if(this->age != 0){                                 //if Person has a age then return age.
