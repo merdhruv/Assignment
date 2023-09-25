@@ -10,79 +10,94 @@ using namespace std;
 
 //-------Library-------
 
-class Employee {
-    int empId;
+class Employee{
+    int EmployeeId;
     string name;
-    char gender;
+    string designation;
+
 public:
-//to set Employee info
-    void setInfo(){
-        cout << "Enter Employee ID : ";
-        cin >> empId;
-        cout << "Enter Employee Name : ";
+	int m_salary;
+    void setEmpinfo(){
+        cout << "Enter Employee's information:" << endl;
+        cout << "Employee Id: ";
+        cin >> EmployeeId;
+        cout << "Name : ";
         cin >> name;
-        cout << "Gender : ";
-        cin >> gender;
-    }
-    //to get Employee info.
-    void getInfo(){
-        cout<<"--------------------------------------------------"<<endl;
-        cout << "ID : " << empId << ", Name : " << name << ", Gender : "<< gender << endl;
-        
-    }
-};
-// Derived Department class form Employee class publicly
-class Department : public Employee{
-    string deptName;
-    int deptCapacity;
-public:
-    void setDept(){
-        cout << "Enter the name of Department : ";
-        cin >> deptName;
-        cout << "Total Number of Employees in Department : ";
-        cin >> deptCapacity;
-    }
-    void getDept(){
-        getInfo();
-        cout<<"--------------------------------------------------"<<endl;
-        cout << "The name of Department is : "<< deptName << endl;
-        cout << "Total number of Employees in Department : " << deptCapacity << endl;
-        cout << "================================================="<<endl;
+        cout << "Designation : ";
+        cin >> designation;
+		cout << "Salary : ";
+		cin >> m_salary;
     }
 
+    void getEmpinfo(){
+        cout<<"----------------------------------------------------------"<<endl;
+         cout << "Employee Id : " << EmployeeId << ",Name : " << name << ",Designation : " << designation << endl;
+         cout <<"********************************************************"<<endl;
+    }
 };
-//Derived Loan class from Employee class privately.
-class Loan : private Employee{
-    string loanDetails;
-    int loanAmount;
+
+class department : public Employee{
+    string department;
+    int EmpNo;
 public:
-    void setLoan(){
+     void setDepinfo(){
+        cout << "Enter Department name :" << endl;
+        cin >> department;
+        cout << "Number of Employees working in Department : ";
+        cin >> EmpNo;
+    }
+
+    void getDepinfo(){
+         cout<<"-----------------------------------------------------"<<endl;
+         cout << "Department name : " <<department  << ", Employee Number : " << EmpNo <<endl;
+    }
+};
+
+class pf_info : private Employee{
+    int loanAmount;
+    string Details;
+public:
+     void setpf_info(){
         cout << "Enter Loan Detail : ";
-        cin >> loanDetails;
+        cin >> Details;
         cout<< "Loan Amount : ";
         cin >> loanAmount;
     }
-    void getLoan(){
-        cout<<"--------------------------------------------------"<<endl;
-        cout << "Loan Details : " << loanDetails << endl;
+    void getpf_info(){
+        cout<<"*****************************************************"<<endl;
+        cout << "Loan Details : " << Details << endl;
         cout << "Amount : " << loanAmount << endl;
-        cout << "================================================="<<endl;
+        cout << "******************************************************"<<endl;
+    }
+
+
+};
+
+class PF: public Employee{ 
+public:    
+    void displayPFdetails(){
+        cout<<"Salary: "<<m_salary<<"\nPF: "<< (m_salary*12)/100 <<endl;
     }
 };
 
 
-
-//-------Application-------
-
+//--------------------------------------------------------------
+// --- Application ---
+/*
+ Interface between executor and Algorithm/Data-structure-library.
+*/
 int main(){
-    
-    Department dept;
-    dept.setInfo();
-    dept.setDept();
-    dept.getDept();
+    department dept;
+    PF obj;
+    dept.setEmpinfo();
+    dept.setDepinfo();
+    dept.getDepinfo();
 
-    Loan l1;
-    l1.setLoan();
-    l1.getLoan();
+	
+    pf_info l1;
+    obj.setEmpinfo();
+    l1.setpf_info();
+    l1.getpf_info();
+	obj.displayPFdetails();
 
 }
