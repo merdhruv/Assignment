@@ -99,6 +99,7 @@ public:
 };
 
 class PF: public Employee{ 
+    int pf_info = (m_salary*12)/100;
 public:   
     //to display PF details.
     void displayPFdetails(){
