@@ -76,7 +76,6 @@ int main(){
     s1.setStudent();
     s1.setResult();
     s1.getStudent();
-    
+    s1.getResult();
 
 }
-// to check
